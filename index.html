@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+  <style>
+   
+  
+  </style>
+  <section>
+    <div class="zagolovok">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes:ital@1" rel="stylesheet">
+     <header>   <h2 class="head_color">С новым Годом!</h2></header>
+    </div>
+    
+  </section>
+ <section>
+  <source src="/assets/music.mp3! type="audio/mpeg">
+  <source src="music.mp3! type="audio/mpeg">
+<source src="music.ogg! type="audio/ogg">
+ </section>
+  <main>
+    <section>
+      <div class="garland"><br><br>
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+        <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+      </div>
+      <script src="CSS/script.js"></script>
+    </section>
+    <section >
+      <div class="image-container">
+        <img src="zolotaya.png" alt="Украшение" class="corner-image">
+         <!-- Прозрачный слой с мерцающими золотыми элементами -->
+    <div class="glow-layer"></div>
+      </div>
+      
+    </section>
+    <section>
+      <div class="elka-image">
+        <img src="zol2-no-bg-preview (carve.photos).png" alt="Елка2" class="bottom-left-image">
+        
+      </div>
+    </section>
+    <section>
+<!-- Кнопка для перехода -->
+ <br>
+<button id="goToPage2" class="btn">Перейти на страницу 2</button>
+<script>
+  document.getElementById('goToPage2').addEventListener('click', function() {
+    window.location.href = 'page2.html';
+  });
+</script>
+    </section>
+  </main>
+  <footer>
+    
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <section>
+      <div class="controls">
+        <button class="play-btn" onclick="playMusic()">
+          ▶ Включить музыку
+        </button>
+        <button class="stop-btn" onclick="stopMusic()">
+          ⏹ Выключить музыку
+        </button>
+      </div>
+    
+    
+      <!-- Статус воспроизведения -->
+      <div id="status" class="status">Музыка не воспроизводится</div>
+    
+    
+      <!-- Аудиоэлемент (скрытый) -->
+      <audio id="bgMusic" loop>
+        <source src="pesniy.mp3" type="audio/mpeg">
+        <source src="pesniy.ogg" type="audio/ogg">
+        Ваш браузер не поддерживает аудио.
+      </audio>
+    
+      <script>
+        // Получаем элементы
+        const audio = document.getElementById('bgMusic');
+        const statusDiv = document.getElementById('status');
+    
+        // Функция для включения музыки
+        function playMusic() {
+          audio.play()
+            .then(() => {
+              statusDiv.textContent = 'Музыка играет! 🎧';
+              statusDiv.style.color = '#4CAF50';
+            })
+            .catch(error => {
+              console.error('Ошибка воспроизведения:', error);
+              statusDiv.textContent = 'Браузер заблокировал автовоспроизведение. Кликните на кнопку ещё раз.';
+              statusDiv.style.color = '#f44336';
+            });
+        }
+    
+        // Функция для выключения музыки
+        function stopMusic() {
+          audio.pause(); // Останавливаем воспроизведение
+          audio.currentTime = 0; // Возвращаем в начало
+          statusDiv.textContent = 'Музыка остановлена';
+          statusDiv.style.color = '#666';
+        }
+    
+        // Обработчики событий аудио
+        audio.addEventListener('play', () => {
+          statusDiv.textContent = 'Музыка играет! 🎧';
+          statusDiv.style.color = '#4CAF50';
+        });
+    
+        audio.addEventListener('pause', () => {
+          if (audio.currentTime > 0) {
+            statusDiv.textContent = 'Музыка приостановлена';
+            statusDiv.style.color = '#666';
+          }
+        });
+    
+        audio.addEventListener('ended', () => {
+          // Если трек закончился, но loop активен — статус не меняем
+          if (!audio.loop) {
+            statusDiv.textContent = 'Музыка завершена';
+            statusDiv.style.color = '#666';
+          }
+        });
+    
+        // Дополнительное взаимодействие для обхода блокировок браузера
+        document.addEventListener('click', () => {
+          // После первого клика пользователь "разрешил" воспроизведение
+          console.log('Первое взаимодействие с страницей зафиксировано');
+        }, { once: true });
+      </script>
+    
+      <style>
+        .controls {
+          margin: 20px auto;
+          text-align: center;
+        }
+    
+        button {
+          padding: 10px 20px;
+          margin: 0 10px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+        }
+    
+        .play-btn {
+          background-color: #4CAF50;
+          color: white;
+        }
+    
+        .stop-btn {
+          background-color: #f44336;
+          color: white;
+        }
+    
+        .status {
+          margin-top: 15px;
+          font-style: italic;
+          color: #ffffff;
+          text-align: center;
+        }
+      </style>
+    </section>
+  </footer>
+  <iframe
+  src="/player.html"
+  style="position:fixed; bottom:0; left:0; width:1px; height:1px; border:0; opacity:0;"
+  title="Фоновый аудиоплеер"
+></iframe>
+<section>
+  <style>
+    
+  
+    .spark {
+      position: absolute;
+      width: 12px;          /* Крупные частицы (было 6px) */
+      height: 12px;
+      border-radius: 50%;
+      opacity: 1;
+      pointer-events: none;
+      box-shadow: 0 0 6px currentColor; /* Более яркое свечение */
+      filter: brightness(1.3); /* Чуть ярче */
+    }
+  </style>
+</head>
+</html>

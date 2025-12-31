@@ -1,0 +1,22 @@
+body{
+    background-color:rgb(129, 37, 37) ;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+    font-size: 37px;
+    color: white;
+    font-family: 'Great Vibes', cursive;
+   
+  }
+
+  .logo-img {
+    height: 6em; /* Высота равна высоте шрифта заголовка */
+    width: auto; /* Сохраняет пропорции */
+    object-fit: contain;
+  }
+
+  
